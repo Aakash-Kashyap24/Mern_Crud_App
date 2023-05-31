@@ -11,10 +11,8 @@ if (process.env.NODE_ENV !== "production") {
 connectDB();
 
 
-const server = app.listen(process.env.PORT, () => {
-  console.log(
-    `server is listening on port  http://localhost:/${process.env.PORT}`
-  );
+const server = app.listen(process.env.PORT||4001, () => {
+
 });
 
 process.on("uncaughtException", (error) => {
