@@ -1,0 +1,20 @@
+.just-between{
+    justify-content: space-between;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+ 
+}
+.flex-1{
+    flex: 1;
+    text-align: left;
+}
+.gap-10{
+    gap: 10px;
+}
+
+input[type="checkbox"]{
+    width: 50px;
+    height: 20px;
+}
