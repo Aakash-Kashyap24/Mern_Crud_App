@@ -64,7 +64,7 @@ export const deleteDataById = AsyncHandler(async (req, res) => {
 
 export const sendDataByEmail = AsyncHandler(async (req, res, next) => {
   const { itemData } = req.body;
-  const email = "Akashuiuxd@gmail.com";
+  const email = "info@redpositive.in";
 
   try {
     // Decorate itemData
