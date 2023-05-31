@@ -1,6 +1,8 @@
 import express from "express";
 import ErrorMiddleware from "./middleware/Error.js";
 import cors from "cors";
+import { fileURLToPath } from "url";
+import path, { dirname } from "path";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import ProductRouter from "./routes/ProductRoutes.js";
@@ -19,6 +21,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api/v1", ProductRouter);
+
+app.use(express.static(path.join(__dirname, "./client")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/index.html"));
+});
+
 
 app.use(ErrorMiddleware);
 
