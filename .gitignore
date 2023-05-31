@@ -6,6 +6,6 @@
 
 
 
-
+/client/node_modules
 /server/config/config.env
 /server/node_modules

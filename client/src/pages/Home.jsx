@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useAlert } from 'react-alert';
+
 import { clearErrors, getAllData, sendDataByEmail } from '../actions/ProductAction';
 import Table from '../components/Table';
 import Loader from '../layout/Loader';
@@ -10,7 +12,7 @@ import './home.css';
 const Home = () => {
     const [selectedData, setSelectedData] = useState([]);
     const [email, setEmail] = useState("info@redpositive.in");
-
+    const alert = useAlert()
     const dispatch = useDispatch();
     const { error, data, loading } = useSelector((state) => state.Data);
 
@@ -19,7 +21,7 @@ const Home = () => {
             dispatch(clearErrors());
         }
         dispatch(getAllData());
-    }, [dispatch,error]);
+    }, [dispatch, error]);
 
     const handleAddData = (newData) => {
         // Implement logic to add new data using Redux actions
@@ -30,18 +32,17 @@ const Home = () => {
     };
     const handleSendData = () => {
         // Logic to send selected data to the specified email address
-       
+
 
         // const emailContent =`;
 
         dispatch(sendDataByEmail(selectedData));
+        alert.success("Email Sent Successfull to  info@redpositive.in")
+
     };
 
 
-    const sendEmail = (email, subject, content) => {
-        // Implement your email sending logic here
-        console.log(`Sending email to ${email} with subject "${subject}" and content: ${content}`);
-    };
+
     const handleSelectData = (id) => {
         const updatedData = data.map((item) => {
             if (item.Id === id) {
@@ -62,7 +63,6 @@ const Home = () => {
     };
 
 
-    console.log("selecated",selectedData)
 
     return (
         <>
@@ -78,7 +78,7 @@ const Home = () => {
                         onSelectData={handleSelectData}
                     />
 
-                    
+
                     <Link to='/add-new-data' className='addNewData'>
                         Add New Data
                     </Link>

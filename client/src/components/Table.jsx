@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useAlert } from 'react-alert';
 import { useDispatch } from 'react-redux';
 import { addData, deleteDataById } from '../actions/ProductAction';
 import './table.css';
@@ -6,7 +7,7 @@ import './table.css';
 const Table = ({ data, onDeleteData, onSendData, onSelectData }) => {
     const [editData, setEditData] = useState({});
     const dispatch = useDispatch();
-
+const alert=useAlert();
     const handleEdit = (item) => {
         setEditData(item);
     };
@@ -22,10 +23,14 @@ const Table = ({ data, onDeleteData, onSendData, onSelectData }) => {
     const saveData = () => {
         dispatch(addData(editData));
         setEditData({});
+        alert.success("Data Updated")
+
     };
 
     const deleteDataId = (Id) => {
         dispatch(deleteDataById(Id));
+        alert.success("Data Deleted")
+
     };
 
     useEffect(() => {

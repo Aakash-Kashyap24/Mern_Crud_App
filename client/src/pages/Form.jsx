@@ -33,6 +33,7 @@ const Form = () => {
         // Reset the form fields after submission
 
         dispatch(addData(formData));
+        alert.success("Data Added")
         Navigate('/');
     };
     useEffect(() => {

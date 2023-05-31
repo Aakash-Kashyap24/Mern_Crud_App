@@ -11,9 +11,7 @@ function App() {
   const dispatch=useDispatch();
 const {error}=useSelector((state)=>state.Data)
 useEffect(() => {
-if (error) {
-  dispatch(clearErrors());
-}
+
 dispatch(getAllData());
 
 }, [dispatch])
