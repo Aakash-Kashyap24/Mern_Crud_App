@@ -26,9 +26,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/api/v1", ProductRouter);
 
-app.use(express.static(path.join(__dirname, "client")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "index.html"));
+app.get("/", (req, res) => {
 });
 
 app.use(ErrorMiddleware);
