@@ -1,5 +1,12 @@
 # Mern_Crud_App
-# Mern_Crud_App
+# Screenshots of site
+
+![Screenshot_select-area_20230602054227](https://github.com/Aakash-Kashyap24/Mern_Crud_App/assets/110857134/c5473b5b-f295-4851-ac94-285b723b9ce6)
+
+![Screenshot_select-area_20230602054236](https://github.com/Aakash-Kashyap24/Mern_Crud_App/assets/110857134/753bf5e3-b3d1-4606-9c8d-95bb5ea05356)
+
+![Screenshot_select-area_20230602054248](https://github.com/Aakash-Kashyap24/Mern_Crud_App/assets/110857134/b3ec2090-b607-4144-90f9-fb6c99ef915a)
+
 # [Your Project Name]
 
 ## Description
